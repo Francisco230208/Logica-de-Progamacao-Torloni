@@ -1,10 +1,11 @@
-// Programa que recebe nome, peso e altura e mostra o IMC com uma casa decimal
+// Programa que recebe nome, peso e altura e mostra o IMC com uma casa decimal (usando float)
 
 // Variáveis
 String nome = "";
-int peso = 0;
-int altura = 0;
-int imc10 = 0;
+float peso = 0.0;
+float altura_cm = 0.0;
+float altura_m = 0.0;
+float imc = 0.0;
 
 void setup() {
   Serial.begin(9600);
@@ -17,26 +18,28 @@ void loop() {
   nome = Serial.readStringUntil('\n');
 
   // Entrada do peso
-  Serial.println("Digite o peso:");
+  Serial.println("Digite o peso (em kg):");
   while (!Serial.available()) {}
-  peso = Serial.parseInt();
+  peso = Serial.parseFloat();
 
   // Entrada da altura
   Serial.println("Digite a altura em cm:");
   while (!Serial.available()) {}
-  altura = Serial.parseInt();
+  altura_cm = Serial.parseFloat();
+  delay(10);
 
-  // Cálculo do IMC com uma casa decimal
-  imc10 = (peso * 100000) / (altura * altura);
+  // Conversão de altura para metros
+  altura_m = altura_cm / 100.0;
+
+  // Cálculo do IMC
+  imc = peso / (altura_m * altura_m);
 
   // Saída
   Serial.print("Nome: ");
   Serial.println(nome);
 
   Serial.print("IMC aproximado: ");
-  Serial.print(imc10 / 10);
-  Serial.print(".");
-  Serial.println(imc10 % 10);
+  Serial.println(imc, 1); // uma casa decimal
 
   delay(5000);
 }
