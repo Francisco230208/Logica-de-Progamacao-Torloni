@@ -10,6 +10,16 @@ void setup() {
 }
 
 void loop() {
+  
+  
+  
+  //cabeçalho
+  Serial.println("|------------------------------|"); 
+  Serial.println("|                              |");
+  Serial.println("|       L0PAL - EX_06          |");
+  Serial.println("|                              |");
+  Serial.println("|------------------------------|");
+  
   // Entrada
   Serial.println("Digite a medida em centimetros:");
   while (!Serial.available()) {}

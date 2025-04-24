@@ -13,11 +13,26 @@ void setup() {
   Serial.begin(9600);
 }
 
-void loop() {
+void loop()
+ { 
+  //cabeçalho
+  Serial.println("|------------------------------|"); 
+  Serial.println("|                              |");
+  Serial.println("|       L0PAL - EX_02          |");
+  Serial.println("|                              |");
+  Serial.println("|------------------------------|");
+  
+
+   
+  Serial.println();//pula uma linha
+  Serial.println();//pula uma linha
+
+
+
   // Entrada
   Serial.println("Digite o ano de nascimento:");
-  while (!Serial.available()) {}
-  anonascimento = Serial.parseInt();
+  while (!Serial.available()) {}//espera o usuario digitar
+  anonascimento = Serial.parseInt();//converte o texto que o usuario digitar em inteiro
 
   Serial.println("Digite o ano atual:");
   while (!Serial.available()) {}
@@ -31,7 +46,5 @@ void loop() {
   Serial.println("Idade: " + String(idade));
   Serial.println("Idade em semanas: " + String(idadesemana));
 
-  // Aguarda antes de repetir
-  while (Serial.available()) { Serial.read(); } // limpa o buffer
   delay(5000);
 }

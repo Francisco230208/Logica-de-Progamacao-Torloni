@@ -12,6 +12,16 @@ void setup() {
 }
 
 void loop() {
+  
+  
+  //cabeçalho
+  Serial.println("|------------------------------|"); 
+  Serial.println("|                              |");
+  Serial.println("|       L0PAL - EX_04          |");
+  Serial.println("|                              |");
+  Serial.println("|------------------------------|");
+  
+  
   // Entrada do nome
   Serial.println("Digite o nome:");
   while (!Serial.available()) {}

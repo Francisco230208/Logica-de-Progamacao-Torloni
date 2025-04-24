@@ -9,6 +9,15 @@ void setup() {
 }
 
 void loop() {
+  
+  
+  //cabeçalho
+  Serial.println("|------------------------------|"); 
+  Serial.println("|                              |");
+  Serial.println("|       L0PAL - EX_03          |");
+  Serial.println("|                              |");
+  Serial.println("|------------------------------|");
+  
   // Entrada
   Serial.println("Digite um numero:");
   while (!Serial.available()) {}

@@ -11,8 +11,16 @@ void setup()
  Serial.begin(9600);
 }
 
-void loop()
-{
+void loop() {
+  
+  
+  //cabeçalho
+  Serial.println("|------------------------------|"); 
+  Serial.println("|                              |");
+  Serial.println("|       L0PAL - EX_06          |");
+  Serial.println("|                              |");
+  Serial.println("|------------------------------|");
+
   //entrada da medida em polegadas
   Serial.println("Medida em polegadas: ");
   while (!Serial.available()) {}
